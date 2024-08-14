@@ -45,7 +45,7 @@ jobs:
       - name: Release Action
         uses: ncipollo/release-action@v1
         with:
-          tag: ${{ needs.generate_git_tags.outputs.new_tag }}
+          tag: ${{ needs.generate_git_tags.outputs.output.new_tag }}
           token: ${{ secrets.CHANGELOG_RELEASE }}
 
   generate_sentry_release:
