@@ -42,7 +42,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Release Action
-        uses: ncipollo/release-action@v1.10.0
+        uses: ncipollo/release-action@v1.14.0
         with:
           tag: ${{ needs.generate_git_tags.outputs.output.new_tag }}
           token: ${{ secrets.CHANGELOG_RELEASE }}
