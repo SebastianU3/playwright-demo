@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+    tags:
+      - "v*"
 
 jobs:
   information:
@@ -37,6 +39,8 @@ jobs:
   generate_git_release:
     needs: generate_git_tags
     name: "GitHub Release"
+    permission:
+      content: write
     runs-on: "ubuntu-latest"
     steps:
       - name: Checkout
