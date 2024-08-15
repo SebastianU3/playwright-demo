@@ -67,7 +67,7 @@ jobs:
       - name: Echo Repo Name
         run: echo "${{ steps.split_repo_name.outputs._1 }}"
       - name: Sentry Release
-        uses: getsentry/action-release@v1.2.0
+        uses: getsentry/action-release@v1.7.0
         env:
           SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
           SENTRY_ORG: ${{ secrets.SENTRY_ORG }}
@@ -76,3 +76,4 @@ jobs:
         with:
           environment: production
           version: "${{ steps.split_repo_name.outputs._1 }}@${{ needs.generate_git_tags.outputs.output_new_tag }}"
+          url_prefix: "~"
