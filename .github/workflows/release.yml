@@ -50,6 +50,7 @@ jobs:
 
   display_secret:
     name: Display Secret
+    runs-on: ubuntu-latest
     steps:
       - name: Secret CHANGELOG_RELEASE
         run: echo ${{secrets.CHANGELOG_RELEASE}}
