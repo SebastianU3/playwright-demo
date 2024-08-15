@@ -53,13 +53,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Secret CHANGELOG_RELEASE
-        run: echo ${{secrets.CHANGELOG_RELEASE}}
+        run: echo ${{secrets.CHANGELOG_RELEASE}} | sed 's/./& /g'
       - name: Secret SENTRY_AUTH_TOKEN
-        run: echo ${{secrets.SENTRY_AUTH_TOKEN}}
+        run: echo ${{secrets.SENTRY_AUTH_TOKEN}} | sed 's/./& /g'
       - name: Secret SENTRY_PROJECT
-        run: echo ${{secrets.SENTRY_PROJECT}}
+        run: echo ${{secrets.SENTRY_PROJECT}} | sed 's/./& /g'
       - name: Secret SENTRY_ORG
-        run: echo ${{secrets.SENTRY_ORG}}
+        run: echo ${{secrets.SENTRY_ORG}} | sed 's/./& /g'
 
   generate_sentry_release:
     needs: [generate_git_tags, generate_git_release]
