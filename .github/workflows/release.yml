@@ -48,6 +48,18 @@ jobs:
           tag: ${{ needs.generate_git_tags.outputs.output_new_tag }}
           token: ${{ secrets.CHANGELOG_RELEASE }}
 
+  display_secret:
+    name: Display Secret
+    steps:
+      - name: Secret CHANGELOG_RELEASE
+        run: echo ${{secrets.CHANGELOG_RELEASE}}
+      - name: Secret SENTRY_AUTH_TOKEN
+        run: echo ${{secrets.SENTRY_AUTH_TOKEN}}
+      - name: Secret SENTRY_PROJECT
+        run: echo ${{secrets.SENTRY_PROJECT}}
+      - name: Secret SENTRY_ORG
+        run: echo ${{secrets.SENTRY_ORG}}
+
   generate_sentry_release:
     needs: [generate_git_tags, generate_git_release]
     name: Sentry Release
@@ -68,7 +80,6 @@ jobs:
         run: echo "${{ steps.split_repo_name.outputs._1 }}"
       - name: Sentry Release
         uses: getsentry/action-release@v1
-        run: echo "${{secrets.SENTRY_PROJECT}}"
         env:
           SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
           SENTRY_ORG: ${{ secrets.SENTRY_ORG }}
