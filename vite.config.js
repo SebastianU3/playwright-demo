@@ -19,3 +19,14 @@ export default defineConfig({
     emptyOutDir: true,
   },
 });
+
+/*
+cb87464b502e87d9a4be52b60057e67f853a7c14
+
+cb87464b502e87d9a4be52b60057e67f853a7c14
+
+BARU : 
+edc01d58cf72a2e260a19370a8d429b26be658d0 (dari Error)
+
+edc01d58cf72a2e260a19370a8d429b26be658d0
+*/
