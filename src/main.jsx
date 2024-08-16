@@ -12,7 +12,7 @@ Sentry.init({
     Sentry.replayIntegration(),
   ],
   environment: "production",
-  release: "playwright-demo@v0.33.0",
+  // release: "playwright-demo@v0.33.0",
   // Performance Monitoring
   tracesSampleRate: 1.0, //  Capture 100% of the transactions
   // Set 'tracePropagationTargets' to control for which URLs distributed tracing should be enabled
